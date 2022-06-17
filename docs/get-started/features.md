@@ -52,6 +52,7 @@ such as restricting discovered features with the -label-whitelist option.*
 | **`cpu-rdt.<rdt-flag>`**          | true   | [Intel RDT][intel-rdt] capability is supported. See [RDT flags](#intel-rdt-flags) for details.
 | **`cpu-sgx.enabled`**             | true   | Set to 'true' if Intel SGX is enabled in BIOS (based a non-zero sum value of SGX EPC section sizes).
 | **`cpu-se.enabled`**              | true   | Set to 'true' if IBM Secure Execution for Linux (IBM Z & LinuxONE) is available and enabled (requires `/sys/firmware/uv/prot_virt_host` facility)
+| **`cpu-tdx.enabled`**             | true   | Set to 'true' if Intel TDX is available and enabled (requires `/sys/module/kvm_intel/parameters/tdx`).
 | **`cpu-model.vendor_id`**         | string | Comparable CPU vendor ID.
 | **`cpu-model.family`**            | int    | CPU family.
 | **`cpu-model.id`**                | int    | CPU model number.

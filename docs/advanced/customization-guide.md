@@ -495,6 +495,8 @@ The following features are available for matching:
 | **`cpu.se`**     | attribute    |          |            | IBM Secure Execution for Linux (IBM Z & LinuxONE)
 |                  |              | **`enabled`** | bool  | `true` if IBM Secure Execution for Linux is available and has been enabled, otherwise does not exist
 | **`cpu.topology`** | attribute  |          |            | CPU topology related features
+| **`cpu.tdx`**    | attribute    |          |            | Intel TDX (Trusted Domain Extensions) capabilities
+|                  |              | **`enabled`** | bool  | `true` if Intel TDX is available and has been enabled, otherwise does not exist
 | | |          **`hardware_multithreading`** | bool       | Hardware multithreading, such as Intel HTT, is enabled
 | **`kernel.config`** | attribute |          |            | Kernel configuration options
 |                  |              | **`<config-flag>`** | string | Value of the kconfig option

@@ -41,6 +41,7 @@ const (
 	SeFeature       = "se"
 	SgxFeature      = "sgx"
 	SstFeature      = "sst"
+	TdxFeature      = "tdx"
 	TopologyFeature = "topology"
 )
 
@@ -180,6 +181,11 @@ func (s *cpuSource) GetLabels() (source.FeatureLabels, error) {
 		labels["power.sst_"+k] = v
 	}
 
+	// TDX
+	for k, v := range features.Values[TdxFeature].Elements {
+		labels["tdx."+k] = v
+	}
+
 	// Hyperthreading
 	if v, ok := features.Values[TopologyFeature].Elements["hardware_multithreading"]; ok {
 		labels["hardware_multithreading"] = v
@@ -224,6 +230,9 @@ func (s *cpuSource) Discover() error {
 
 	// Detect SST features
 	s.features.Values[SstFeature] = feature.NewValueFeatures(discoverSST())
+
+	// Detect TDX features
+	s.features.Values[TdxFeature] = feature.NewValueFeatures(discoverTDX())
 
 	// Detect hyper-threading
 	s.features.Values[TopologyFeature] = feature.NewValueFeatures(discoverTopology())
